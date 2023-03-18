@@ -84,7 +84,7 @@ gdown 1R2xWtNeVX48RiFA7vErL1pNtws3XEsYP
 unzip qed.zip
 cd ${PROJECT_DIR}
 python preprocess_qed.py tmp/en tmp/qed
-cat tmp/qed/* >> preprocessed_data/qed.txt
+find . -maxdepth 1 -type f -name tmp/qed/* -print0 | sort -zV | xargs -0 cat>preprocessed_data/qed.txt
 ```
 
 
